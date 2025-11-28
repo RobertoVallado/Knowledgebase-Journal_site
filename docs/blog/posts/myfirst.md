@@ -16,7 +16,7 @@ tags:
   - hogmanay
   - festive season
 authors:
-  - team
+  - robertovallado
 slug: ny-eve
 ---
 

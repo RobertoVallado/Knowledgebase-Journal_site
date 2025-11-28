@@ -1,0 +1,8 @@
+services:
+  mkdocs:
+    build: .
+    ports:
+      - "4203:8001"
+    container_name: mkdocs-blog
+    volumes:
+      - .:/docs

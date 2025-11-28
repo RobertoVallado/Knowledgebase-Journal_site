@@ -1,58 +1,38 @@
-# A Material for Mkdocs Blog Template
 
-The purpose of the template in this repository is to give you a starting point
-for setting up a blog that makes use of features that Material for MkDocs
-provides and of selected integrations with other plugins that are of specific
-relevance to running a blog.
+Modifications © 2025 Roberto Vallado
 
-It reflects the results you get by going through the [blog tutorials] in the
-documentation. 
+Original Software © 2016-2023 Martin Donath, Alex Voss
+Licensed under MIT License.
 
-[blog tutorials]: https://squidfunk.github.io/mkdocs-material/tutorials#blogs
+# Mkdocs Blog Template
 
-## Requirements
+This repository contains my personal **MkDocs + Material** blog and documentation template. It serves as a starting point for building a modern blog or technical documentation site using **Material for MkDocs** along with a curated set of plugins that are particularly well-suited for blogging.
 
-The to use the all the features this template uses, you need the [Insiders
-Edition] of Material for MkDocs but it should be easy enough to strip it down so
-that it works with the public version.
+The initial structure is inspired by the official Material for MkDocs blog tutorials, but it has been adapted, simplified, and customized to match my own development workflow and deployment needs.
 
-[Insiders Edition]: https://squidfunk.github.io/mkdocs-material/insiders/
+### Development & Tooling
 
-You will also need to install the [mkdocs-rss-plugin].
+This template is designed to be developed and previewed using **Docker**, making it easy to spin up a local environment with live reload for fast iteration and content updates. The container installs the required tooling using:
 
-[mkdocs-rss-plugin]: https://github.com/guts/mkdocs-rss-plugin
+This setup allows for:
 
-## Using it
+- Live rebuilding and watching of file changes  
+- Consistent environments across machines (for good dev practices and bc Im Docker horny)
 
-This the repository is a [template repository], so you can create as many forks 
-of it as you like and your repository will contain only a single commit to start 
-with, instead of the whole history of the template. Also, you can create a 
-private repository from this template (while forks inherit the visibility settings 
-from the original).
+### Custom JavaScript & Environment Variables
 
-[template repository]: https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template
+The template also supports custom JavaScript through MkDocs' `extra_javascript` option. 
 
-Simply hit the `Use this template` button. You can set the specifics of your new 
-repository from there.
+In addition, Python is used to inject environment variables at build time (via plugins/macros), making it easy to handle configuration values securely and dynamically across environments.
 
-[repository that contains this template]: https://github.com/mkdocs-material/create-blog
+### Purpose
 
+This template is designed to be:
 
-## Project layout
+- Easy to develop locally with Docker  
+- Simple to deploy  
+- Flexible enough for both personal blogging and technical documentation  
+- Easily adapted to work with **GitHub Actions** for automated builds and deployment
 
-The following shows the layout of the files in this template. Note that you can
-configure Material for MkDocs to use a different layout, this is simply the
-default.
-
-```
-mkdocs.yml              # The configuration file.
-docs/
-    index.md            # The documentation homepage.
-    blog/               # The directory that all blog content goes into (first blog instance)
-        posts/          # the place to put your posts
-        author/         # Author profiles
-        .authors.yml    # Author information to be added to posts (shared betwe
-ext/                    # Directory that contains code for the custom slugs
-hooks/                  # Directory for a hook that adds social media share buttons
-```
+Original inspiration: [Material for MkDocs – Blog Tutorials](https://squidfunk.github.io/mkdocs-material/tutorials/#blogs)
 

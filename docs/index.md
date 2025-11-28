@@ -1,17 +1,7 @@
-# Welcome to MkDocs
+# About  
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Source of insight, pointers on cybersecurity and clean code practices. 
 
-## Commands
+In this space, I'll share my findings as I dive deeper into security exploits and vulnerabilities as part of my research to improve my hacking and bug bounty skills.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+>This is for you if you're someone who values **Clean Code**, **Good Development Practices** and **Cybersecurity**.

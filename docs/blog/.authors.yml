@@ -1,9 +1,6 @@
 authors:
-  team:
-    name: Team
+  robertovallado:
+    name: Roberto Vallado
+    bio: Software developer and blogger.
     description: Creator
-    avatar: https://simpleicons.org/icons/materialformkdocs.svg
-  squidfunk:
-    name: Martin Donath
-    description: Creator
-    avatar: https://github.com/squidfunk.png
+    avatar: assets/images/rico.png

@@ -1,27 +1,59 @@
-site_name: Blog Tutorial
-site_description: an example blog set up following the blog tutorials
-site_url: http://www.example.com
+site_name: Security Blog
+site_description: Source of insight, pointers on cybersecurity and clean code practices. 
+site_url: https://www.robertovallado.dev/
+
+nav:
+  - About: index.md
+  - Tags: tags.md
+  - Blog:
+     - blog/index.md
 
 theme:
   name: material
   features:
-    - navigation.indexes
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+
+  logo: assets/images/code-white.png
+  favicon: assets/images/skull.ico
+  language: en 
+
+  font:
+    text: Arial
+    code: Roboto Mono
+  palette:
+    - scheme: slate        # Light mode
+      primary: indigo
+      accent: deep-purple
+      toggle:
+        icon: material/weather-sunny
+        name: Dark mode
+    - scheme: default          # Dark mode
+      primary: indigo
+      accent: deep-purple
+      toggle:
+        icon: material/weather-night
+        name: Light mode
 
 plugins:
   - search
+  - mermaid2
+  - macros
   - blog:
       blog_toc: true
       archive_date_format: MMMM yyyy
       categories_allowed:
         - Holidays
         - News
-      authors_profiles: true
+      authors_profiles: false
       pagination_per_page: 5
       archive_pagination_per_page: 10
       categories_pagination_per_page: 10
-      post_slugify: !!python/object/apply:ext.slugs.slugify
-        kwds:
-          short: true
+            
+      # post_slugify: !!python/object/apply:../ext.slugs.slugify  
+        # TODO REVIEW
+
   - meta
   - tags
   - rss:
@@ -31,23 +63,37 @@ plugins:
         as_update: date.updated
 
 extra:
+  alternate:
+    - name: English
+      link: /
+      lang: en
+    - name: Français
+      link: /fr/
+      lang: fr
+    - name: Español
+      link: /es/
+      lang: es
+
   social:
-    - icon: fontawesome/brands/mastodon
-      name: squidfunk on Mastodon
-      link: https://fosstodon.org/@squidfunk
+    - icon: fontawesome/brands/github
+      name: Github
+      link: https://github.com/RobertoVallado
+
+    - icon: fontawesome/brands/linkedin
+      name: LinkedIn
+      link: https://www.linkedin.com/in/roberto-vallado/
+
+  generator: false  # hides the “Made with Material for MkDocs” text
+copyright: © <span id="year"></span> - Roberto Vallado's Security Blog.
+
+extra_javascript:
+  - assets/js/footer-year.js
 
 hooks:
   - hooks/socialmedia.py
-
+  # TODO REVIEW
 markdown_extensions:
   - attr_list
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
-
-nav:
-  - Home: index.md
-  - Tags: tags.md
-  - Blog:
-     - blog/index.md
-     - blog/tags.md
+  # Allows adding classes, IDs, or other attributes to Markdown elements
+  - pymdownx.emoji
+  # Enables emoji shortcodes to render as actual emoji icons
