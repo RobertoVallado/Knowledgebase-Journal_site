@@ -1,4 +1,4 @@
-site_name: Security Blog
+site_name: Dev & Security Journal
 site_description: >-
   Source of insight, pointers on cybersecurity and clean code practices. 
 site_url: https://www.robertovallado.dev/
@@ -6,12 +6,14 @@ site_author: Roberto Vallado
 
 nav:
   - Home: index.md
+  - Tags: tags.md
+  - Journal:
+    - blog/index.md
+    - blog/tags.md
+  - Archive:
+    - archive/index.md
+    - archive/tags.md
   - about.md
-  - Blog:
-      - All Posts: blog/index.md
-      - Tags: blog/tags.md
-      - Authors:
-          - Roberto Vallado: blog/author/robertovallado.md
 
 theme:
   name: material
@@ -19,9 +21,9 @@ theme:
   custom_dir: overrides
 
   features:
+    - navigation.indexes
     - navigation.instant
     - navigation.instant.progress
-    - navigation.instant.preview
     - navigation.tracking
     - navigation.tabs
     - navigation.sections
@@ -32,7 +34,7 @@ theme:
     - search.share
     - content.code.copy
 
-  logo: assets/images/code-white.png
+  logo: assets/images/code.ico
   favicon: assets/images/code.ico
   font:
     text: Arial
@@ -53,59 +55,83 @@ theme:
         name: Light mode
 
 plugins:
-  - search
-  - mermaid2
-  - macros
+    # First Blog Instance - Main Journal
   - blog:
+      blog_dir: blog
+      post_dir: "blog/posts"
       blog_toc: true
       archive_date_format: MMMM yyyy
       categories_allowed:
         - Holidays
-        - News
-      authors_profiles: false
+        - Technical Interview Topics
+      authors_profiles: true
       pagination_per_page: 5
       archive_pagination_per_page: 10
       categories_pagination_per_page: 10
-            
-      # post_slugify: !!python/object/apply:../ext.slugs.slugify  
-        # TODO REVIEW
 
+  # Second Blog Instance - Technical Notes
+  - blog:
+      blog_dir: archive
+      post_dir: "archive/posts"
+      blog_toc: true
+      archive_date_format: MMMM yyyy
+      categories_allowed:
+        - Vault
+      authors_profiles: true
+      pagination_per_page: 10
+      archive_pagination_per_page: 15
+      categories_pagination_per_page: 15
+
+      # post_slugify: !!python/object/apply:../ext.slugs.slugify  
+      # TODO REVIEW - Keep commented until path is correct.
   - meta
   - tags
+
+  # - i18n:
+  #     docs_structure: folder
+  #     default_language: en
+  #     languages:
+  #       - locale: en
+  #         name: English
+  #         default: true
+  #         build: true
+  #       - locale: fr
+  #         name: Français
+  #         default: false
+  #         build: true
+  #       - locale: es
+  #         name: Español
+  #         default: false
+  #         build: true 
+  # Setting up multi-language installations https://github.com/squidfunk/mkdocs-material/discussions/2346
+
+  - search
+  - mermaid2
+  - macros
+
   - rss:
       match_path: "blog/posts/.*"
       date_from_meta:
-        as_creation: date.created
-        as_update: date.updated
+        as_creation: date
+        as_update: date_updated
+      
+  - rss:
+      match_path: "archive/posts/.*"
+      date_from_meta:
+        as_creation: date
+        as_update: date_updated
 
-  - i18n:
-      docs_structure: folder
-      default_language: en
-      languages:
-        - locale: en
-          name: English
-          default: true
-          build: true
-        - locale: fr
-          name: Français
-          default: false
-          build: true
-        - locale: es
-          name: Español
-          default: false
-          build: true
-
-extra:
-  languages:
-    en:
-      name: English
-      link: /
-    fr:
-      name: Français
-      link: /fr/
-    es:
-      name: Español
-      link: /es/
+# extra:
+#   languages:
+#     en:
+#       name: English
+#       link: /
+#     fr:
+#       name: Français
+#       link: /fr/
+#     es:
+#       name: Español
+#       link: /es/
 
 #   social:
 #     - icon: fontawesome/brands/github
@@ -117,7 +143,7 @@ extra:
 #       link: https://www.linkedin.com/in/roberto-vallado/
 
 #   generator: false  # hides the “Made with Material for MkDocs” text
-# copyright: © <span id="year"></span> - Roberto Vallado's Security Blog.
+# copyright: © <span id="year"></span> - Roberto Vallado's Dev & Security Journal.
 
 extra_css:
   - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css
@@ -132,8 +158,6 @@ hooks:
 
 markdown_extensions:
   - attr_list
-  # Allows adding classes, IDs, or other attributes to Markdown elements
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  # Enables emoji shortcodes to render as actual emoji icons

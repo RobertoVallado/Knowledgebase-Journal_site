@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # À propos
 
 Une source d’idées, de conseils pratiques et de réflexions sur la sécurité applicative et les bonnes pratiques de clean code.
@@ -6,7 +11,7 @@ Sur ce site, je partage mes découvertes en explorant les failles de sécurité,
 
 J’utilise également ces articles comme une base de connaissances personnelle : un endroit pour noter ce que j’ai appris, organiser les concepts utiles, garder trace des éléments que je souhaite revoir et archiver les informations auxquelles je veux pouvoir revenir au fur et à mesure que je développe mes compétences.
 
-> Pour tous ceux qui valorisent le **Clean Code**, les **Bonnes Pratiques de Développement** et la **Sécurité Applicative**, et qui sont sur leur propre chemin d’amélioration.
+> Pour tous ceux qui valorisent le **Clean Code**, les **Bonnes Pratiques de Développement**, la **Sécurité Applicative**, et qui sont sur leur propre chemin d’amélioration.
 
 ---
 
