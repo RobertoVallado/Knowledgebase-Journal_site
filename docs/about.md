@@ -20,6 +20,7 @@ I also use these entries as a personal knowledge base: a place to document/jot d
 ## Simple is Always __"Bueno"__!
 
 ```mermaid
+%%{init: {'theme': 'base', 'htmlLabels': false, 'themeVariables': {'primaryTextColor': '#1a1a1a', 'textColor': '#1a1a1a', 'lineColor': '#546e7a'}}}%%
 graph TD
     %% Root
     Root[📦 Project Root]
@@ -47,17 +48,17 @@ graph TD
     Config --> MainConfig[📘 mkdocs.yml]
 
     %% Styling
-    style Root fill:#263238,stroke:#000,color:#ffffff,stroke-width:2px
+    style Root fill:#263238,stroke:#000,color:#ffffff,font-weight:700,stroke-width:2px
 
-    style Docs fill:#e3f2fd,stroke:#1e88e5,stroke-width:2px
-    style Archive fill:#bbdefb,stroke:#1565c0,stroke-width:2px
-    style SharedDocs fill:#e1f5fe,stroke:#0288d1,stroke-width:2px
+    style Docs fill:#90caf9,stroke:#1e88e5,color:#000000,font-weight:700,stroke-width:2px
+    style Archive fill:#64b5f6,stroke:#1565c0,color:#000000,font-weight:700,stroke-width:2px
+    style SharedDocs fill:#81d4fa,stroke:#0288d1,color:#000000,font-weight:700,stroke-width:2px
 
-    style Config fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+    style Config fill:#ce93d8,stroke:#7b1fa2,color:#000000,font-weight:700,stroke-width:2px
 
     %% File-level styling
-    classDef file fill:#ffffff,stroke:#90a4ae,stroke-width:1px
-    class ArchConfig,About,CommonIndex,Docker,Dockerfile,MainConfig file
+    classDef file fill:#90a4ae,stroke:#546e7a,color:#000000,font-weight:700,stroke-width:1px
+    class About,Docker,Dockerfile,MainConfig,ArchAuthor,ArchImages,ArchPosts,Stylesheets file
 
 ```
 
@@ -69,6 +70,7 @@ This site is automatically deployed using GitHub Actions. Every time changes are
 I try to keep it always up to date, removes the need for manual deployment, and keeps the publishing process consistent, repeatable and easy for me.
 
 ```mermaid
+%%{init: {'theme': 'base', 'htmlLabels': false, 'themeVariables': {'primaryTextColor': '#1a1a1a', 'textColor': '#1a1a1a', 'lineColor': '#546e7a'}}}%%
 graph LR
     Dev[👨‍💻 Local Changes] --> GitHub[📦 GitHub Repository]
     GitHub --> Action[⚙️ GitHub Actions Workflow]
@@ -77,12 +79,12 @@ graph LR
     Deploy --> Live[🌐 Live Documentation]
 
     %% Styling
-    style Dev fill:#e3f2fd,stroke:#1e88e5
-    style GitHub fill:#e8f5e9,stroke:#2e7d32
-    style Action fill:#fff3e0,stroke:#ef6c00
-    style Build fill:#ede7f6,stroke:#5e35b1
-    style Deploy fill:#fce4ec,stroke:#ad1457
-    style Live fill:#263238,stroke:#000,color:#ffffff
+    style Dev fill:#90caf9,stroke:#1e88e5,color:#000000,font-weight:700
+    style GitHub fill:#a5d6a7,stroke:#2e7d32,color:#000000,font-weight:700
+    style Action fill:#ffa726,stroke:#ef6c00,color:#000000,font-weight:700
+    style Build fill:#b39ddb,stroke:#5e35b1,color:#000000,font-weight:700
+    style Deploy fill:#f48fb1,stroke:#ad1457,color:#000000,font-weight:700
+    style Live fill:#263238,stroke:#000,color:#ffffff,font-weight:700
 ```
 
 #

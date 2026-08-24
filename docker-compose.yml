@@ -5,4 +5,4 @@ services:
       - "4203:8001"
     container_name: mkdocs-archive
     volumes:
-      - .:/docs
+      - .:/docs:z

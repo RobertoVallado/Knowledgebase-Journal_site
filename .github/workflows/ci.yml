@@ -23,7 +23,6 @@ jobs:
           pip install --no-cache-dir \
             mkdocs \
             mkdocs-material \
-            mkdocs-mermaid2-plugin \
             mkdocs-macros-plugin \
             mkdocs-rss-plugin \
             pymdown-extensions
